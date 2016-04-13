@@ -1,0 +1,42 @@
+<h3>Book Requests</h3>
+<hr/>
+<div class="container" style="padding-bottom: 20px; margin-left:30px;">
+	<form class="form-inline">
+		<div class="form-group">
+			<h4>Find : &nbsp;&nbsp;</h4>
+		</div>
+		<div class="form-group">
+			<input class="form-control"type="text" name="name" placeholder="Keyword" ng-model="search">
+		</div>
+	</form>
+</div>
+<table class="table table-hover table-striped table-bordered">
+<thead>
+	<tr>
+		<th>Borrower</th>
+		<th>Book</th>
+		<th>Date Requested</th>
+		<th class="actioncol">Action</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="borrow in borrows | orderBy: 'dreq' | filter:search">
+		<td>{{borrow.bfname+" "+borrow.bmname+" "+borrow.blname}}</td>
+		<td>{{borrow.btitle}}</td>
+		<td>{{borrow.dreq}}</td>
+		<td class="actioncol">
+			<button type="button" name="button" class="btn btn-success btn-xs" ng-click="approve(borrow.borrower_id, borrow.book_id, borrow.dreq)">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true" ></span> Approve
+			</button>
+			<button type="button" name="button" class="btn btn-danger btn-xs" ng-click="remove(borrow.borrower_id, borrow.book_id, borrow.dreq)">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true" ></span> Reject
+			</button>
+		</td>
+	</tr>
+</tbody>
+</table>
+<style media="screen">
+	.actioncol{
+		text-align: center;
+	}
+</style>

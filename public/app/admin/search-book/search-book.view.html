@@ -1,0 +1,89 @@
+<div class="form-inline" id="searchBar">
+	<div class="form-group">
+		<form ng-submit="searchBook(booktitle)" class="form-inline">
+			<input class="form-control"type="text" name="name" placeholder="Title" ng-model="booktitle" required>
+			<input class="btn btn-primary btn-sm"type="submit" name="name" value="Search Book">
+		</form>
+	</div>
+	<div class="form-group">
+
+	</div>
+	<div class="form-group">
+		<form ng-submit="searchAuthor(authorname)" class="form-inline">
+			<input class="form-control"type="text" name="name" placeholder="Author" ng-model="authorname" required>
+			<input class="btn btn-primary btn-sm"type="submit" name="name" value="Search Author">
+		</form>
+	</div>
+</div>
+
+
+<h4>Search for: </h4> <span> {{searchQuery}}</span>
+<hr/>
+
+<div class="" id="bookTable">
+<table class="table table-hover table-striped table-bordered">
+<thead>
+	<tr>
+		<th>Book ID</th>
+		<th>Book Title</th>
+		<th>Author(s)</th>
+		<th>Publisher</th>
+		<th>Type</th>
+		<th>Details</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="book in books | orderBy:'btitle'">
+		<td>{{book.book_id}}</td>
+		<td>{{book.btitle}}</td>
+		<td>
+			<button class="btn btn-xs btn-default showAuth"type="button" name="button" id="{{book.book_id}}" ng-click="toggleAuthor(book.book_id)">Show Author(s)</button>
+			<ul class="autho btn-smrsList">
+				<li ng-repeat="a in book.authors | orderBy:'authlname'">{{a.authfname +" "+a.authlname}}</li>
+			</ul>
+		<td>{{book.bpub}}</td>
+		<td>{{book.btype}}</td>
+		<td>{{book.bloc == null? book.bdue : book.bloc}}</td>
+	</tr>
+</tbody>
+</table>
+</div>
+<div class="" id="authorTable">
+<table class="table table-hover table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Author</th>
+			<th>Book Title</th>
+			<th>Publisher</th>
+			<th>Type</th>
+			<th>Details</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="author in authors | orderBy:'authlname'">
+			<td>{{author.authfname +" "+author.authlname}}</td>
+			<td>{{author.btitle}}</td><td>{{author.bpub}}</td>
+			<td>{{author.btype}}</td>
+			<td>{{author.bdue==null? "Location: "+author.bloc:"Due: "+author.bdue}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<style media="screen">
+#searchBar{
+	padding-top: 20px;
+}
+.showAuth{
+	float: none;
+	margin:0 auto;
+	display: block;
+}
+ul.authorsList{
+	float: none;
+	margin:0;
+	margin-left: -22%;
+	display: block;
+	list-style-type: none;
+	text-align: center;
+}
+</style>

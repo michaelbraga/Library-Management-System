@@ -1,0 +1,52 @@
+body{
+	display: none;
+
+    background-color: rgba(193, 222, 197, 0.1);
+
+}
+#limit{
+	max-width: 500px;
+	padding-bottom: 30px;
+}
+#studentChoice,#teacherChoice{
+	cursor: pointer;
+	border: 1px solid #2c3e50;
+}
+#studentChoice{
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-bottomleft: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	-webkit-border-top-right-radius: 0px;;
+	-webkit-border-bottom-right-radius: 0px;;
+	-moz-border-radius-topright: 0px;;
+	-moz-border-radius-bottomright: 0px;;
+	border-top-right-radius: 0px;;
+	border-bottom-right-radius: 0px;;
+}
+#teacherChoice{
+	-webkit-border-top-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-moz-border-radius-topright: 20px;
+	-moz-border-radius-bottomright: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+a, a:hover{
+	color: #2c3e50;
+}
+#already{
+	text-align: center;
+	max-width: 472px;
+}
+#submit{
+	font-size: 1.3em;
+}

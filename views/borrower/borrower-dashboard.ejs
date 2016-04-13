@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="michaelbraga">
+		<title><%-title%></title>
+
+
+		<!-- JQUERY -->
+		<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+		<!-- ANGULARJS -->
+		<script type="text/javascript" src="/components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="/components/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- BOOTSTRAP -->
+		<!-- <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8" /> -->
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8" />
+		<!-- MASTER CSS -->
+		<link rel="stylesheet" href="/css/flatly.css" media="screen" title="no title" charset="utf-8"/>
+
+	</head>
+	<body id="content" style="display:none; padding-top:60px;" ng-app="BorrowerApp">
+		<div class="row">
+			<% include ./../ejs-partials/borrower-navbar %>
+		</div>
+		<div class="row">
+			<div class="container">
+
+				<div class="col-md-12" ng-view="">
+				</div>
+			</div>
+		</div>
+   <script type="text/javascript">
+	   $(document).ready(function () {
+		   $('#content').fadeIn(200);
+	   });
+   </script>
+   <script type="text/javascript" src="/app/borrower/borrower.router.js"></script>
+   <script type="text/javascript" src="/app/borrower/borrower.service.js"></script>
+   <script type="text/javascript" src="/app/borrower/dashboard/dashboard.controller.js"></script>
+   <script type="text/javascript" src="/app/borrower/available-books/available-books.controller.js"></script>
+   <script type="text/javascript" src="/app/borrower/borrow-requests/borrow-requests.controller.js"></script>
+   <script type="text/javascript" src="/app/borrower/pending-requests/pending-requests.controller.js"></script>
+   <script type="text/javascript" src="/app/borrower/borrowed-books/borrowed-books.controller.js"></script>
+   <script type="text/javascript" src="/app/borrower/records/records.controller.js"></script>
+   <script type="text/javascript" src="/app/borrower/search-book/search-book.controller.js"></script>
+	</body>
+
+</html>

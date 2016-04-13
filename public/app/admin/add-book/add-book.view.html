@@ -1,0 +1,93 @@
+<h3>Add a Book</h3>
+<hr/>
+<div class="container">
+	<div class="well bs-component" id="formBox">
+		<form class="form-horizontal" ng-submit="addBook()">
+		  <fieldset>
+			<div class="form-group">
+		  	    	<label for="book_id" class="col-sm-2 control-label">Book ID</label>
+		  	    	<div class="col-sm-10">
+	  	    	      <input type="text" class="form-control" ng-model="book.book_id" placeholder="Book ID" maxlength="15" required/>
+	  	    	    	</div>
+	  	    	  	</div>
+			<div class="form-group">
+		    	    	<label for="btitle" class="col-sm-2 control-label">Book Title</label>
+		    	    	<div class="col-sm-10">
+		    	      <input type="text" class="form-control" ng-model="book.btitle" placeholder="Book Title" maxlength="50" required/>
+		    	    	</div>
+		    	  	</div>
+			<div class="form-group">
+		    	    	<label for="bpub" class="col-sm-2 control-label">Publisher</label>
+		    	    	<div class="col-sm-10">
+		    	      <input type="text" class="form-control" ng-model="book.bpub" placeholder="Publisher" maxlength="50" />
+		    	    	</div>
+		    	  	</div>
+			<div class="form-group">
+		    	    	<label for="btype" class="col-sm-2 control-label">Book Type</label>
+		    	    	<div class="col-sm-10">
+		    	      <input type="text" class="form-control" ng-model="book.btype" placeholder="Book Type" maxlength="30" required/>
+		    	    	</div>
+		    	  	</div>
+			<div class="form-group">
+		    	    	<label for="bloc" class="col-sm-2 control-label">Location</label>
+		    	    	<div class="col-sm-10">
+		    	      <input type="text" class="form-control" ng-model="book.bloc" placeholder="Location" maxlength="30"required/>
+		    	    	</div>
+		    	  	</div>
+			<div class="form-group">
+			      <label for="ss" class="col-lg-2 control-label"># Authors</label>
+			      <div class="col-lg-10">
+			        <select class="form-control" onchange="showAuthor(this);" id="ss">
+				    <option>0</option>
+    				    <option>1</option>
+    				    <option>2</option>
+    				    <option>3</option>
+    				    <option>4</option>
+    				    <option>5</option>
+			        </select>
+			      </div>
+			    	</div>
+			<div class="form-group">
+				<label for="dito" class="col-lg-2 control-label"> </label>
+				<div class="container" id="dito">
+				</div>
+				</div>
+			<div class="form-group">
+		     		<div class="col-lg-10 col-lg-offset-2" >
+		    		<button type="submit" class="btn btn-default" >Add Book</button>
+		    	    	</div>
+		    	  	</div>
+		  </fieldset>
+	  </form>
+	</div>
+</div>
+<style media="screen">
+#formBox{
+	max-width:650px;
+}
+#dito{
+	max-width: 400px;
+}
+hr.lines{
+	border: thin solid darkgrey;
+}
+</style>
+<script type="text/javascript">
+var element = '<div class="form-group row" > ' +
+			'<label  for="authname">First Name</label> ' +
+			'<input type="text" class="form-control" akin=\'fname\' placeholder="Author First Name" maxlength="20" required/> ' +
+		 	' </div> ' +
+		 ' <div class="form-group row" > ' +
+			'<label for="authname">Last Name</label> ' +
+			'<input type="text" class="form-control" akin=\'lname\' placeholder="Author Last Name" maxlength="20" required/> ' +
+		 	' </div><hr class="lines"/> ' ;
+showAuthor(0);
+function showAuthor(num) {
+	var el = '';
+	for (var i = 0; i < num.value; i++) {
+		el += element;
+	}
+	$('div#dito').empty();
+	$('div#dito').html(el);
+}
+</script>

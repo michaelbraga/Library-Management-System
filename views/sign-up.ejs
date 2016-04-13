@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="michaelbraga">
+		<title><%-title%></title>
+
+
+		<!-- JQUERY -->
+		<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+		<!-- ANGULARJS -->
+		<script type="text/javascript" src="/components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="/components/angular-route/angular-route.min.js"></script>
+
+		<!-- BOOTSTRAP -->
+		<!-- <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8" /> -->
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8" />
+		<!-- MASTER CSS -->
+		<link rel="stylesheet" href="/css/flatly.css" media="screen" title="no title" charset="utf-8">
+		<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/indexApp.js"></script>
+		<link rel="stylesheet" href="/css/sign-up-custom.css" media="screen" title="no title" charset="utf-8">
+	</head>
+<body ng-app="IndexApp" ng-controller="IndexCtrl">
+
+ <h2 class="text-center">
+	 <span class="glyphicon glyphicon-education" aria-hidden="true">
+	 </span> Create an account
+ </h2>
+<p class="text-center">
+	<em>Read books, shape the future.</em>
+</p>
+<div class="container" id="already">
+	<a href="/">Back to homepage</a> | <a href="/">Already have an account?</a>
+</div>
+<hr/>
+<div class="container" id="limit">
+	<form ng-submit="createAccount()">
+		<div class="form-group">
+			<label for="fname" >First name</label>
+			<input class="form-control" type="text" placeholder="First name" required="required" maxlength="20" ng-model="borrower.bfname"></input>
+		</div>
+		<div class="form-group" >
+			<label for="mname">Middle name</label>
+			<input class="form-control" type="text" name="mname" placeholder="Middle name" required="required" maxlength="20" ng-model="borrower.bmname"></input>
+		</div>
+		<div class="form-group" >
+			<label for="lname">Last name</label>
+			<input class="form-control" type="text" name="lname" placeholder="Last name" required="required" maxlength="20" ng-model="borrower.blname"></input>
+		</div>
+		<div class="form-group" >
+			<label for="bpass">Password</label>
+			<input class="form-control" type="password" name="bpass" placeholder="Password" required="required" maxlength="20" ng-model="borrower.bpass"></input>
+			</div>
+		<div class="form-group">
+			<label for="bcol"> College</label>
+			<select name="bcol" class="form-control" required="required" ng-model="borrower.bcol">
+				<option value="" disabled selected>Choose your college</option>
+				<option value="College of Agriculture">College of Agriculture</option>
+				<option value="College of Art and Sciences">College of Art and Sciences</option>
+				<option value="College of Development Communication">College of Development Communication</option>
+				<option value="College of Engineering and Agro-industrial Technology">College of Engineering and Agro-industrial Technology</option>
+				<option value="College of Economics and Management">College of Economics and Management</option>
+				<option value="College of Forestry and Natural Resources">College of Forestry and Natural Resources</option>
+				<option value="College of Human Ecology">College of Human Ecology</option>
+				<option value="College of Public Affairs">College of Public Affairs</option>
+				<option value="College of Veterinary Medicine">College of Veterinary Medicine</option>
+				<option value="School of Environmental Science and Management">School of Environmental Science and Management</option>
+				<option value="Graduate School">Graduate School</output>
+				</select>
+			</div>
+		<div class="form-group">
+			<ul class="nav nav-pills nav-justified">
+ 			<li class="active" id="student" onclick="choose('student')">
+				<a id="studentChoice">Student</a>
+			</li>
+			<li id="teacher" onclick="choose('teacher')">
+				<a id="teacherChoice">Teacher</a>
+			</li>
+			</ul>
+			</div>
+		<div class="form-group" id="choiceMade">
+			<div class="form-group">
+				<label for="brw_id" id="bid">Student number</label>
+				<input class="form-control" type="text" name="brw_id" placeholder="Student number" required="required" maxlength="15"ng-model="borrower.borrower_id"></input>
+				</div>
+			<div class="form-group">
+				<label for="det" id="det">Degree Course</label>
+				<input class="form-control" type="text" name="det" placeholder="Degree Course" required="required"  maxlength="50"ng-model="borrower.det"></input>
+			</div>
+		</div>
+
+		<div class="form-group" id="banners">
+			<div id="wrongSignUp" class="alert alert-dismissible alert-danger"  style="display:none;">
+				<button class="close" type="button" onclick="resetBanners()">x</button>
+				<strong>Fail!</strong> omg, something's wrong. I think your student/employee number already exists!
+				</div>
+			<div id="yaySignUp"class="alert alert-dismissible alert-success" style="display:none;">
+				<button class="close" type="button" onclick="resetBanners()">x</button>
+				<strong>Yay!</strong> Registration was successful, wait for (at most) <em>24 hours</em> for approval.
+				</div>
+			<input type="submit" id="submit" class="btn btn-primary btn-block" value="Create an Account"/>
+		</div>
+		</form>
+
+
+	</div>
+	<script type="text/javascript">
+		$('body').fadeIn(300);
+	</script>
+</body>
+
+</html>

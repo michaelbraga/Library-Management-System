@@ -1,0 +1,27 @@
+<h3>Book Requests | Pending</h3>
+<hr/>
+<table class="table table-hover table-striped table-bordered">
+<thead>
+	<tr>
+		<th>Book ID</th>
+		<th>Book Title</th>
+		<th>Publisher</th>
+		<th>Type</th>
+		<th>Date Requested</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="borrow in borrows">
+		<td>{{borrow.book_id}}</td>
+		<td>{{borrow.btitle}}</td>
+		<td>{{borrow.bpub}}</td>
+		<td>{{borrow.btype}}</td>
+		<td>{{borrow.dreq}}</td>
+	</tr>
+</tbody>
+</table>
+<style media="screen">
+	.actioncol{
+		text-align: center;
+	}
+</style>

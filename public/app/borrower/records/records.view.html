@@ -1,0 +1,29 @@
+<h3>Borrow Records</h3>
+<hr/>
+<table class="table table-hover table-striped table-bordered">
+<thead>
+	<tr>
+		<th>Book ID</th>
+		<th>Book Title</th>
+		<th>Date Requested</th>
+		<th>Date Borrowed</th>
+		<th>Date Returned</th>
+		<th>Approved by</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="borrow in borrows">
+		<td>{{borrow.book_id}}</td>
+		<td>{{borrow.btitle}}</td>
+		<td>{{borrow.dreq}}</td>
+		<td>{{borrow.dborrow}}</td>
+		<td>{{borrow.dreturn}}</td>
+		<td>{{borrow.aname}}</td>
+	</tr>
+</tbody>
+</table>
+<style media="screen">
+	.actioncol{
+		text-align: center;
+	}
+</style>

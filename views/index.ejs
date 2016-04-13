@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="michaelbraga">
+		<title><%-title%></title>
+
+
+		<!-- JQUERY -->
+		<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+		<!-- ANGULARJS -->
+		<script type="text/javascript" src="/components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="/components/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- BOOTSTRAP -->
+		<!-- <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8" /> -->
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8" />
+		<!-- MASTER CSS -->
+		<link rel="stylesheet" href="/css/flatly.css" media="screen" title="no title" charset="utf-8"/>
+		<link rel="stylesheet" href="/css/index-custom.css" media="screen" title="no title" charset="utf-8"/>
+		<script type="text/javascript" src="/js/indexApp.js"></script>
+
+	</head>
+<body ng-app="IndexApp" ng-controller="IndexCtrl">
+<div id="bg">
+
+</div>
+<div class="container" id="content">
+	<div class="container" id="logobox">
+		<span class="glyphicon glyphicon-grain logo"aria-hidden:"true"></span>
+		<span class="logo" style="Bookman Old Style" id="logoText">Library</span>
+	</div>
+	<div class="container" id="loginForm">
+		<form class="form-horizontal" id="logform" ng-submit="login()">
+			   <div class="form-group">
+				   <div class="col-lg-10" id="inputObject">
+					   <div id="box">
+						   <input class="form-control" type="text" name="name" placeholder="User ID" id="userid" required="required" maxlength='15' ng-model="userId"/>
+	   					<input class="form-control" type="password" name="name" placeholder="Password" id="pass" required="required" maxlength='20' ng-model="pass"/>
+					   </div>
+					<input class="btn btn-primary btn-block"type="submit" name="name" value="Log In" id="loginButton"/>
+				   </div>
+			   </div>
+			   <div class="form-group" style="text-align:center;">
+				   <a href="/sign-up" id="link">Create an account?</a>
+
+			   </div>
+		</form>
+	</div>
+</div>
+
+</body>
+
+</html>

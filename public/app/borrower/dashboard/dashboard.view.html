@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="/css/sb-admin.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+<div class="row">
+	<div class="col-lg-12">
+	       <h2 class="page-header">Dashboard</h2>
+		 <hr/>
+	</div>
+</div>
+<div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-archive fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{no_acc_req}}</div>
+                                    <div> Borrow Records</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/borrower#/records">
+                            <div class="panel-footer">
+                                <span class="pull-left" style="color:#2c3e50;">View Details</span>
+                                <span class="pull-right" style="color:#2c3e50;"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+		    <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-book fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{no_bor_req}}</div>
+                                    <div> Borrow Requests</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/borrower#/pending-requests">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-check fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{no_app_bor}}</div>
+                                    <div> Approved Requests</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/borrower#/borrow-requests">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-exclamation-triangle fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{no_due_books}}</div>
+                                    <div> Due Books</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/borrower#/borrowed-books">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>

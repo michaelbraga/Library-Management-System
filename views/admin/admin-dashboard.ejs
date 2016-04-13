@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="michaelbraga">
+		<title><%-title%></title>
+
+
+		<!-- JQUERY -->
+		<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+		<!-- ANGULARJS -->
+		<script type="text/javascript" src="/components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="/components/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- BOOTSTRAP -->
+		<!-- <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8" /> -->
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8" />
+		<!-- MASTER CSS -->
+		<link rel="stylesheet" href="/css/flatly.css" media="screen" title="no title" charset="utf-8"/>
+
+	</head>
+	<body ng-app="AdminApp" style="padding-top:60px; display:none" id="content">
+	<div class="container-fluid">
+		<div class="row">
+			<% include ./../ejs-partials/admin-navbar %>
+		</div>
+		<div class="row">
+			<div class="col-md-12" ng-view="">
+			</div>
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript" src="/app/admin/admin.router.js"></script>
+	<script type="text/javascript" src="/app/admin/admin.service.js"></script>
+	<!-- Controllers -->
+	<script type="text/javascript" src="/app/admin/account-requests/account-requests.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/add-book/add-book.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/approved-book-requests/approved-book-requests.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/book-requests/book-requests.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/dashboard/dashboard.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/search-book/search-book.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/view-available/view-available.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/view-borrowed/view-borrowed.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/view-records/view-records.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/view-students/view-students.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/view-teachers/view-teachers.controller.js"></script>
+	<script type="text/javascript" src="/app/admin/all-books/all-books.controller.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#content').fadeIn(200);
+		});
+	</script>
+</html>

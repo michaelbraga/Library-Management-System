@@ -1,0 +1,54 @@
+<h3>Books | Available</h3>
+<hr/>
+<div class="container" style="padding-bottom: 20px; margin-left:30px;">
+	<form class="form-inline">
+		<div class="form-group">
+			<h4>Find : &nbsp;&nbsp;</h4>
+		</div>
+		<div class="form-group">
+			<input class="form-control"type="text" name="name" placeholder="Keyword" ng-model="search">
+		</div>
+	</form>
+</div>
+<table class="table table-hover table-striped table-bordered">
+<thead>
+	<tr>
+		<th>Book ID</th>
+		<th>Book Title</th>
+		<th>Author(s)</th>
+		<th>Publisher</th>
+		<th>Type</th>
+		<th>Location</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="book in books | orderBy:'btitle' | filter:search">
+		<td>{{book.book_id}}</td>
+		<td>{{book.btitle}}</td>
+		<td>
+			<button class="btn btn-xs btn-default showAuth"type="button" name="button" id="{{book.book_id}}" ng-click="toggleAuthor(book.book_id)">Show Author(s)</button>
+			<ul class="authorsList">
+				<li ng-repeat="a in book.authors | orderBy:'authlname'">{{a.authfname +" "+a.authlname}}</li>
+			</ul>
+		<td>{{book.bpub}}</td>
+		<td>{{book.btype}}</td>
+		<td>{{book.bloc}}</td>
+	</tr>
+</tbody>
+</table>
+<style media="screen">
+.showAuth{
+	float: none;
+	margin:0 auto;
+	display: block;
+}
+ul.authorsList{
+	float: none;
+	margin:0;
+	margin-left: -22%;
+	display: block;
+	list-style-type: none;
+	text-align: center;
+}
+
+</style>

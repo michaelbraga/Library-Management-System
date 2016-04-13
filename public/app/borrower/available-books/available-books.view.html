@@ -1,0 +1,50 @@
+<h3>Books | Available</h3>
+<hr/>
+<table class="table table-hover table-striped table-bordered">
+<thead>
+	<tr>
+		<th>Book ID</th>
+		<th>Book Title</th>
+		<th>Author(s)</th>
+		<th>Publisher</th>
+		<th>Type</th>
+		<th>Location</th>
+		<th style="text-align:center;">
+			Actions
+		</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="book in books | orderBy:'btitle'">
+		<td>{{book.book_id}}</td>
+		<td>{{book.btitle}}</td>
+		<td>
+			<button class="btn btn-xs btn-default showAuth"type="button" name="button" id="{{book.book_id}}" ng-click="toggleAuthor(book.book_id)">Show Author(s)</button>
+			<ul class="authorsList">
+				<li ng-repeat="a in book.authors | orderBy:'authlname'">{{a.authfname +" "+a.authlname}}</li>
+			</ul>
+		<td>{{book.bpub}}</td>
+		<td>{{book.btype}}</td>
+		<td>{{book.bloc}}</td>
+		<td>
+			<button ng-click="requestBook(book.book_id)"class="btn btn-sm btn-primary" type="button" name="button" style="display:block; margin:auto;">Request</button>
+		</td>
+	</tr>
+</tbody>
+</table>
+<style media="screen">
+.showAuth{
+	float: none;
+	margin:0 auto;
+	display: block;
+}
+ul.authorsList{
+	float: none;
+	margin:0;
+	margin-left: -22%;
+	display: block;
+	list-style-type: none;
+	text-align: center;
+}
+
+</style>
