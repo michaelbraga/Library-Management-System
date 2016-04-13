@@ -9,6 +9,8 @@
 3.	Grunt (for development only)
 	* this will be primarily used for running the server for traces
 4.	PostgreSQL
+
+
 ---
 ### Running the service
 #### On Windows
